@@ -1,0 +1,324 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",Arial,sans-serif;
+}
+
+body{
+background:#f3f8ff;
+color:#222;
+transition:.3s;
+}
+
+/* NAVBAR */
+nav{
+height:75px;
+background:linear-gradient(
+135deg,
+#0077ff,
+#00c6ff
+);
+color:white;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 40px;
+box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+nav h2{
+font-size:25px;
+}
+
+.nav-buttons button{
+background:white;
+color:#0077ff;
+border:none;
+padding:10px 18px;
+border-radius:20px;
+margin-left:8px;
+cursor:pointer;
+font-weight:bold;
+transition:.3s;
+}
+
+.nav-buttons button:hover{
+transform:translateY(-3px);
+}
+
+/* LAYOUT */
+.layout{
+display:flex;
+}
+
+/* SIDEBAR */
+aside{
+width:240px;
+min-height:calc(100vh - 75px);
+background:white;
+padding:30px 20px;
+text-align:center;
+box-shadow:5px 0 20px rgba(0,0,0,.07);
+}
+
+aside img{
+width:100px;
+animation:float 3s infinite;
+}
+
+@keyframes float{
+50%{
+transform:translateY(-12px);
+}
+}
+
+aside li{
+list-style:none;
+padding:15px;
+margin:10px 0;
+border-radius:15px;
+cursor:pointer;
+transition:.3s;
+}
+
+aside li:hover{
+background:#0077ff;
+color:white;
+transform:translateX(8px);
+}
+
+/* MAIN */
+main{
+flex:1;
+padding:40px;
+}
+
+.box{
+background:white;
+border-radius:25px;
+padding:30px;
+margin-bottom:25px;
+box-shadow:
+0 10px 30px rgba(0,0,0,.08);
+}
+
+.page{
+display:none;
+animation:show .5s;
+}
+@keyframes show{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* CARDS */
+.cards{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+margin-top:25px;
+}
+
+.card{
+background:#f7fbff;
+padding:25px;
+border-radius:20px;
+text-align:center;
+border:1px solid #e4efff;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card h3{
+color:#555;
+}
+
+.card p{
+font-size:28px;
+font-weight:bold;
+color:#0077ff;
+margin-top:15px;
+}
+/* FORM */
+input,
+select{
+width:100%;
+padding:14px;
+margin:10px 0;
+border-radius:12px;
+border:1px solid #ddd;
+font-size:16px;
+}
+
+input:focus,
+select:focus{
+outline:none;
+border-color:#0077ff;
+}
+
+/* BUTTONS */
+button{
+background:linear-gradient(
+135deg,
+#0077ff,
+#00c6ff
+);
+color:white;
+border:none;
+padding:13px 20px;
+border-radius:15px;
+cursor:pointer;
+font-weight:bold;
+margin:5px;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+button:active{
+transform:scale(.95);
+}
+
+/* HEALTH INFO */
+.health-info{
+background:#f7fbff;
+padding:20px;
+border-radius:20px;
+margin-top:25px;
+}
+
+.health-info p{
+padding:8px;
+font-weight:bold;
+}
+
+/* ALERTS */
+.alerts{
+margin-top:25px;
+background:#eef7ff;
+padding:20px;
+border-radius:20px;
+color:#0077ff;
+}
+.alerts p{
+background:white;
+padding:12px;
+margin:8px 0;
+border-radius:12px;
+}
+
+/* MEALS */
+#mealList p{
+background:#f5f9ff;
+padding:12px;
+margin:10px 0;
+border-radius:12px;
+}
+
+/* WATER */
+.progress{
+height:25px;
+background:#ddd;
+border-radius:20px;
+overflow:hidden;
+margin-top:20px;
+}
+
+#waterBar{
+height:100%;
+width:0%;
+background:linear-gradient(
+90deg,
+#00c6ff,
+#0077ff
+);
+transition:1s;
+}
+/* WORKOUT */
+.workout-card{
+background:#f7fbff;
+padding:25px;
+border-radius:20px;
+}
+
+.workout-card p{
+padding:8px;
+}
+
+/* HISTORY */
+.history-card{
+background:#f7fbff;
+padding:15px;
+border-radius:15px;
+margin:10px 0;
+line-height:1.8;
+}
+
+/* DARK MODE */
+.dark{
+background:#121212;
+color:white;
+}
+
+.dark aside,
+.dark .box,
+.dark .card,
+.dark .health-info,
+.dark .alerts,
+.dark .history-card,
+.dark .workout-card{
+background:#1f1f1f;
+color:white;
+}
+
+.dark input,
+.dark select{
+background:#333;
+color:white;
+border-color:#555;
+}
+
+.dark .alerts p{
+background:#333;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+.layout{
+flex-direction:column;
+}
+
+aside{
+width:100%;
+min-height:auto;
+}
+
+.cards{
+grid-template-columns:1fr;
+}
+
+nav{
+height:auto;
+flex-direction:column;
+gap:15px;
+padding:20px;
+}
+
+main{
+padding:20px;
+}
+}
